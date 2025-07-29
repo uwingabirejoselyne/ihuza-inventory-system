@@ -1,4 +1,4 @@
-"use client"
+ 
 
 import { Bell, Sun, Moon } from "lucide-react"
 import { useLoginUser } from "../hooks/useAppContext"

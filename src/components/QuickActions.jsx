@@ -1,4 +1,4 @@
-"use client"
+ 
 
 import { Users, Package, ActivityIcon as Assignment, ArrowRight } from "lucide-react"
 
@@ -30,19 +30,19 @@ const QuickActions = ({ setActiveTab }) => {
   const getColorClasses = (color) => {
     const colors = {
       blue: {
-        bg: "bg-blue-50 dark:bg-blue-900",
+        // bg: "bg-blue-50 dark:bg-blue-900",
         border: "border-blue-200 dark:border-blue-700",
         icon: "text-blue-600 dark:text-blue-300",
         text: "text-blue-600 dark:text-blue-300",
       },
       green: {
-        bg: "bg-green-50 dark:bg-green-900",
+        // bg: "bg-green-50 dark:bg-green-900",
         border: "border-green-200 dark:border-green-700",
         icon: "text-green-600 dark:text-green-300",
         text: "text-green-600 dark:text-green-300",
       },
       purple: {
-        bg: "bg-purple-50 dark:bg-purple-900", // Will need to define purple colors in CSS
+        // bg: "bg-purple-50 dark:bg-purple-900", // Will need to define purple colors in CSS
         border: "border-purple-200 dark:border-purple-700",
         icon: "text-purple-600 dark:text-purple-300",
         text: "text-purple-600 dark:text-purple-300",
