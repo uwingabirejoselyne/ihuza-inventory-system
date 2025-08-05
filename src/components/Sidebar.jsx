@@ -6,17 +6,19 @@ import {
   LogOut,
   BarChart3,
 } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { useLoginUser } from "../hooks/useAppContext";
 
-const Sidebar = ({ activeTab, setActiveTab }) => {
+const Sidebar = () => {
   const { loginUser, logout } = useLoginUser();
+  const location = useLocation();
 
   const menuItems = [
-    { id: "dashboard", label: "Dashboard", icon: BarChart3 },
-    { id: "users", label: "Users", icon: Users },
-    { id: "products", label: "Products", icon: Package },
-    { id: "assignments", label: "Assignments", icon: Assignment },
-    { id: "categories", label: "Categories", icon: Grid3X3 },
+    { id: "dashboard", label: "Dashboard", icon: BarChart3, path: "/dashboard" },
+    { id: "users", label: "Users", icon: Users, path: "/users" },
+    { id: "products", label: "Products", icon: Package, path: "/products" },
+    { id: "assignments", label: "Assignments", icon: Assignment, path: "/assignments" },
+    { id: "categories", label: "Categories", icon: Grid3X3, path: "/categories" },
   ];
 
   return (
@@ -40,19 +42,20 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
         <div className="space-y-1">
           {menuItems.map((item) => {
             const Icon = item.icon;
+            const isActive = location.pathname === item.path;
             return (
-              <button
+              <Link
                 key={item.id}
-                onClick={() => setActiveTab(item.id)}
+                to={item.path}
                 className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors text-left ${
-                  activeTab === item.id
+                  isActive
                     ? "bg-blue-100 text-blue-700 shadow-md"
                     : "text-black hover:bg-blue-100 hover:text-white dark:hover:bg-blue-800 dark:hover:text-white"
                 }`}
               >
                 <Icon size={20} />
                 <span className="font-medium">{item.label}</span>
-              </button>
+              </Link>
             );
           })}
         </div>

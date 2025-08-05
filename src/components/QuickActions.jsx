@@ -1,8 +1,11 @@
  
 
 import { Users, Package, ActivityIcon as Assignment, ArrowRight } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 
-const QuickActions = ({ setActiveTab }) => {
+const QuickActions = () => {
+  const navigate = useNavigate()
+  
   const actions = [
     {
       id: "users",
@@ -10,6 +13,7 @@ const QuickActions = ({ setActiveTab }) => {
       description: "View all registered users",
       icon: Users,
       color: "blue",
+      path: "/users"
     },
     {
       id: "products",
@@ -17,6 +21,7 @@ const QuickActions = ({ setActiveTab }) => {
       description: "View all registered products",
       icon: Package,
       color: "green",
+      path: "/products"
     },
     {
       id: "assignments",
@@ -24,6 +29,7 @@ const QuickActions = ({ setActiveTab }) => {
       description: "View all product assignments",
       icon: Assignment,
       color: "purple", // Changed to purple based on image
+      path: "/assignments"
     },
   ]
 
@@ -61,7 +67,7 @@ const QuickActions = ({ setActiveTab }) => {
           return (
             <button
               key={action.id}
-              onClick={() => setActiveTab(action.id)}
+              onClick={() => navigate(action.path)}
               className={`w-full flex items-center justify-between p-4 rounded-lg border-2 transition-colors hover:shadow-md ${currentColors.bg} ${currentColors.border}`}
             >
               <div className="flex items-center space-x-3">
