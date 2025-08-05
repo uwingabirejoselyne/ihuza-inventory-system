@@ -134,16 +134,6 @@ const LoginPage = () => {
               )}
             </button>
           </form>
-
-          {/* Demo Credentials */}
-          <div className="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-200">
-            <p className="text-blue-800 text-sm font-medium mb-2">Demo Credentials:</p>
-            <div className="text-blue-700 text-xs space-y-1">
-              <p><strong>Admin:</strong> john.smith@ihuza.com / password123</p>
-              <p><strong>Manager:</strong> sarah.j@ihuza.com / sarahpass</p>
-              <p><strong>Staff:</strong> m.brown@ihuza.com / michaelpass</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
