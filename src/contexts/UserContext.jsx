@@ -10,7 +10,7 @@ export const UserProvider = ({ children }) => {
     {
       id: 1,
       name: "John Smith",
-      email: "john.smith@ihuza.com",
+      email: "jose@gmail.com",
       password: "password123",
       role: "Admin",
       status: "Active",
